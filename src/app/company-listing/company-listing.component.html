@@ -1,6 +1,12 @@
-<ag-grid-angular
-  class="ag-theme-quartz"
-  style="height: 500px"
-  [rowData]="rowData"
-  [columnDefs]="colDefs"
-/>
+<button mat-fab extended (click)="onAddButtonClick()">
+  <mat-icon>add</mat-icon>
+  Add Company
+</button>
+<div class="grid">
+  <ag-grid-angular
+    class="ag-theme-quartz"
+    style="height: 500px"
+    [rowData]="rowData"
+    [columnDefs]="colDefs"
+  />
+</div>

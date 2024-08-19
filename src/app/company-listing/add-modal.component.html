@@ -1,0 +1,28 @@
+<h4>Add Company</h4>
+
+<div>
+  <label for="name">Name: </label>
+  <input id="name" type="text" [formControl]="name" />
+</div>
+
+<div>
+  <label for="exchange">Exchange: </label>
+  <input id="exchange" type="text" [formControl]="exchange" />
+</div>
+
+<div>
+  <label for="ticker">Ticker: </label>
+  <input id="ticker" type="text" [formControl]="ticker" />
+</div>
+
+<div>
+  <label for="isin">Isin: </label>
+  <input id="isin" type="text" [formControl]="isin" />
+</div>
+
+<div>
+  <label for="website">Website: </label>
+  <input id="website" type="text" [formControl]="website" />
+</div>
+
+<button (click)="ref.close(true)">Close</button>

@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { DialogService } from '@ngneat/dialog';
 import { HelloWorldComponent } from './add-modal.component';
+import { CompanyListingService } from './company-listing.service';
 
 @Component({
   selector: 'app-company-listing',
@@ -20,18 +21,19 @@ export class CompanyListingComponent {
 
   // Column Definitions: Defines the columns to be displayed.
   colDefs: ColDef[] = [
-    { field: 'name' },
-    { field: 'exchange' },
-    { field: 'ticker' },
-    { field: 'isin' },
+    { field: 'name', filter: true },
+    { field: 'exchange', filter: true },
+    { field: 'ticker', filter: true },
+    { field: 'isin', filter: true },
     { field: 'website' },
   ];
+
+  constructor(private companyListingService: CompanyListingService) {}
 
   ngOnInit() {}
 
   onAddButtonClick() {
     const dialogRef = this.dialog.open(HelloWorldComponent, {
-      // data is typed based on the passed generic
       data: {
         title: '',
       },
